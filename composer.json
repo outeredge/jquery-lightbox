@@ -1,8 +1,21 @@
 {
-    "name": "minlare/jquery-lightbox",
-    "description": "jQuery.lightbox by minlare",
+    "name": "outeredge/jquery-lightbox",
+    "type": "magento-module",
+    "description": "jQuery.lightbox by outer/edge",
     "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "outer/edge",
+            "email": "support@outeredgeuk.com"
+        }
+    ],
     "require": {
+        "magento-hackathon/magento-composer-installer": "*",
         "edge/sass": "*"
+    },
+    "extra": {
+        "map": [
+            ["jquery.lightbox.js", "skin/frontend/base/default/js/jquery.lightbox.js"]
+        ]
     }
 }
