@@ -284,11 +284,9 @@ img {
   -moz-align-items: center;
   align-items: center; }
 
-.images img {
-  width: 100px; }
-
 .lightbox-overlay {
-  background: rgba(0, 0, 0, 0.75); }
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1000000; }
   .lightbox-overlay .lightbox .lightbox-image .lightbox-close {
     width: 30px;
     height: 30px;
