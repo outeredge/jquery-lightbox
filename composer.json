@@ -1,0 +1,8 @@
+{
+    "name": "minlare/jquery-lightbox",
+    "description": "jQuery.lightbox by minlare",
+    "minimum-stability": "dev",
+    "require": {
+        "edge/sass": "*"
+    }
+}

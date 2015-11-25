@@ -1,0 +1,100 @@
+$classes: false
+@import ../../vendor/edge/sass/sass/edge
+
+.images
+    img
+        width: 100px
+
+.lightbox-overlay
+    background: rgba(0,0,0,0.75)
+    @extend %fixed-fill, %cursor-pointer
+    .lightbox
+        @extend %fixed-fill, %flex, %flex-center
+        .lightbox-image
+            .lightbox-close
+                width: 30px
+                height: 30px
+                top: 15px
+                right: 15px
+                box-shadow: 1px 1px 5px $darkgrey
+                @extend %absolute, %block, %bg-white
+                @include border-radius(50%)
+                &:before
+                    content: ''
+                    width: 3px
+                    height: 13px
+                    top: 9px
+                    right: 13px
+                    @extend %bg-darkgrey, %block, %absolute, %rotate-45
+                &:after
+                    content: ''
+                    width: 3px
+                    height: 13px
+                    top: 9px
+                    right: 13px
+                    @extend %bg-darkgrey, %block, %absolute, %rotate-315
+            img
+                box-shadow: 1px 1px 5px $darkgrey
+                border: 3px solid $white
+                @extend %cursor-default, %block
+            .lightbox-info
+                padding: 10px 15px
+                background: rgba(0,0,0,0.75)
+                bottom: 3px
+                left: 3px
+                width: calc(100% - 6px)
+                @extend %absolute, %text-white
+                .lightbox-paging
+                    @extend %right
+
+    &.lightbox-gallery
+        .lightbox
+            span
+                @extend %relative
+                .nav
+                    width: 30px
+                    height: 30px
+                    top: calc(50% - 15px)
+                    box-shadow: 1px 1px 5px $darkgrey
+                    @extend %absolute, %block, %bg-white
+                    @include border-radius(50%)
+                    &:before
+                        content: ''
+                        width: 3px
+                        height: 10px
+                        top: calc(50% - 8px)
+                        left: 13px
+                        @extend %bg-darkgrey, %block, %absolute, %rotate-45
+                    &:after
+                        content: ''
+                        width: 3px
+                        height: 10px
+                        top: calc(50% - 2px)
+                        left: 13px
+                        @extend %bg-darkgrey, %block, %absolute, %rotate-315
+                    &[data-direction="-1"]
+                        left: 15px
+                    &[data-direction="1"]
+                        right: 15px
+                        @extend %rotate-180
+
+    &.theme-square
+        .lightbox
+            .lightbox-image
+                .lightbox-close
+                    box-shadow: none
+                    @extend %top-right
+                    @include border-radius(0)
+            span
+                &.nav
+                    box-shadow: none
+                    @include border-radius(0)
+                    &[data-direction="-1"]
+                        left: 0
+                    &[data-direction="1"]
+                        right: 0
+
+@media screen and (min-width: 541px)
+    .lightbox-overlay
+        .lightbox
+            padding: map-get($padding,large)
