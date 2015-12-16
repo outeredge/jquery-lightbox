@@ -103,11 +103,15 @@
 
             close: function()
             {
-                this.lightbox.hide();
+                if (this.lightbox)
+                    this.lightbox.hide();
             },
 
             resize: function()
             {
+                if (!this.image)
+                    return;
+                
                 if (!this.image.ratio)
                     this.image.ratio = this.image.get(0).naturalHeight / this.image.get(0).naturalWidth;
 
